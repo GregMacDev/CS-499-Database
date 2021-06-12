@@ -194,19 +194,7 @@ public class SQLDatabase {
 		String search = "";
 		double bidData = 0.0;
 		int bidCount = 0;
-		/*
-		// Check for searching on Bid Amount to change the search from an equals to
-		// a less than the passed value. Also changes passed data from string to
-		// double.
-		if(column.equals("bid")) {
-			bidData = Double.parseDouble(data);
-			search = "SELECT * FROM bids WHERE " + column + "<= " + bidData 
-					+ "ORDER BY " + column + " ASC"; 
-		}else {		
-			search = "SELECT * FROM bids WHERE " + column + "= '" + data + "' ORDER BY "
-					+ column + " ASC";
-		}
-		*/
+		
 		try {
 			// Check for searching on Bid Amount to change the search from an equals to
 			// a less than the passed value. Also changes passed data from string to
