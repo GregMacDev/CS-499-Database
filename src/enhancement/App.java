@@ -280,6 +280,10 @@ public class App {
 				break;
 			case 4:	// Search for Bid Amount
 				System.out.println("Enter MAX value to search for.");
+				while(!scanner.hasNextDouble()) {
+					System.out.println("Invalid Bid Amount. Must be a number. Please Re-enter the new price.");
+					scanner.nextLine();
+				}
 				userData = scanner.nextLine();
 				db.searchBid("bid", userData);
 				userChoice = 5;
