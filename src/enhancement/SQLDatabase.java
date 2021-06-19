@@ -126,6 +126,7 @@ public class SQLDatabase {
 	public void updateBid(String itemName, String column, String data) {
 		String update = "";
 		double bidData = 0.0;
+		int success = 0;
 		
 		try {
 			if(column.equals("bid")) {
@@ -143,7 +144,13 @@ public class SQLDatabase {
 				preparedStatement.setString(2, itemName);
 			}
 			
-			preparedStatement.executeUpdate();
+			success = preparedStatement.executeUpdate();
+			
+			if (success !=0) {
+				System.out.println(itemName + " updated successfully.");
+			}else {
+				System.out.println(itemName + " not found.");
+			}
 			
 		} catch(SQLException ex) {
 			Logger lgr = Logger.getLogger(App.class.getName());
