@@ -67,6 +67,12 @@ public class App {
 		System.out.println("Enter element to change. (Title, Fund, Vehicle, Bid)");
 		updateColumn = scanner.nextLine();
 		System.out.println("Enter new data.");
+		if(updateColumn.equalsIgnoreCase("bid")) {
+			while(!scanner.hasNextDouble()) {
+				System.out.println("Invalid Bid Amount. Must be a number. Please Re-enter the new price.");
+				scanner.nextLine();
+			}
+		}
 		updateData = scanner.nextLine();
 		
 		db.updateBid(itemTitle, updateColumn, updateData);
